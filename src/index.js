@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import OrganizationalStructure from './OrganizationalStructure';
+import App from './App';
 import './index.css';
 
 ReactDOM.render(
-  <OrganizationalStructure />,
+  <App />,
   document.getElementById('root')
 );

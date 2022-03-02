@@ -5,8 +5,10 @@ import Button from '../Button';
 
 const Node = ({ name, clickHandlerNode, clickHandlerFunction, remove = true }) => {
   return (
-    <div className='node-container' onClick={() => clickHandlerNode()}>
-        <span>{ name }</span>
+    <div className='node-container'>
+        <span onClick={() => clickHandlerNode()}>
+          { name !== '' ? name : 'Nombre de la organización' }
+        </span>
         { remove && <Button type="btn-remove" icon="remove" clickHandler={clickHandlerFunction} /> }
         <Button type="btn-add" icon="add" clickHandler={clickHandlerFunction} />
         <Button type="btn-arrow" icon="chevron_right" clickHandler={clickHandlerFunction} />

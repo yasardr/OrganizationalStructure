@@ -1,9 +1,10 @@
-import React from 'react';
-import Breadcrumb from './components/Breadcrumb';
-import Node from './components/Node';
-import Data from './data/Data';
+import React from 'react'
+import PropTypes from 'prop-types';
+import AppFrame from '../components/AppFrame';
+import Node from "../components/Node";
+import Data from '../data/Data';
 
-const OrganizationalStructure = (props) => {
+const MainPage = props => {
     const { name } = Data;
 
     console.log(Data);
@@ -16,11 +17,12 @@ const OrganizationalStructure = (props) => {
     }
 
     return (
-        <div className='container'>
-            <Breadcrumb />
+        <AppFrame>
             <Node name={ name } clickHandlerNode={handlerNode} clickHandlerFunction={onClickHandler} remove={ false } />
-        </div>
+        </AppFrame>
     )
 }
 
-export default OrganizationalStructure;
+MainPage.propTypes = {}
+
+export default MainPage;

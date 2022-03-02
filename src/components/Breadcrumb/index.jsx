@@ -6,7 +6,7 @@ import BreadcrumbItem from '../BreadcrumbItem';
 const Breadcrumb = (props) => {
   return (
     <div className='breadcrumb'>
-        {/* <BreadcrumbItem title='Organización' content='Angeles S.A de C.V' /> */}
+        <BreadcrumbItem title='Organización' content='Angeles S.A de C.V' />
     </div>
   )
 }
