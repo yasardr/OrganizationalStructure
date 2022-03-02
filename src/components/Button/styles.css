@@ -1,0 +1,32 @@
+.btn-round {
+    border: 0;
+    color: white;
+    background-color: white;
+    border-radius: 15px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 7px #D3D5E0;
+}
+
+.btn-round > span {
+    font-size: 15px;
+}
+
+.btn-add {
+    background-color: #0492A2;
+    box-shadow: 0px 3px 2px #51B3BE inset;
+}
+
+.btn-remove {
+    background-color: #C41A1A;
+    box-shadow: 0px 3px 2px #D14E4E inset;
+}
+
+.btn-arrow {
+    color: #92A4B8;
+}

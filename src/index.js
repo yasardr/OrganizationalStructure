@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import OrganizationalStructure from './OrganizationalStructure';
+import './index.css';
 
 ReactDOM.render(
   <OrganizationalStructure />,

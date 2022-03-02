@@ -1,0 +1,6 @@
+.breadcrumb {
+    text-align: start;
+    margin: 30px;
+    display: flex;
+    overflow: auto;
+}

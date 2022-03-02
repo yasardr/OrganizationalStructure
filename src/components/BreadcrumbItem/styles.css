@@ -1,0 +1,24 @@
+.item-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    min-width: 162px;
+}
+
+.text > h5 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.text > span {
+    font-size: 15px;
+}
+
+.arrow {
+    margin-left: 10px;
+    color: #0063AF;
+}
+
+.selected {
+    color: #0063AF !important;
+}
