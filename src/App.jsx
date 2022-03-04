@@ -6,7 +6,7 @@ import MainPage from './pages/MainPage';
 import NodePage from './pages/NodePage';
 import NotFoundPage from './pages/NotFoundPage';
 import Data from './data/Data';
-import { search, result, tracing } from './services/search';
+import { search } from './services/search';
 
 const App = () => {
     const initialValue = Data;
@@ -14,19 +14,53 @@ const App = () => {
     const reducer = (state, action) => {
         switch (action.type) {
             case 'SET_NAME_NODE':
-                //Verificar que se le cambie al correcto
-                const newName = action.payload;
-                return { ...state, name: newName }; 
+                const { id: nodeId, value: newName } = action.payload;
+                const { result: nodeSetName } = search(nodeId, state);
+                nodeSetName.name = newName;
+                return {...state};
             case 'ADD_NODE':
                 const id = action.payload;
-                search(id, state);
-                if (tracing.length === 0) {
-                    const newInstitute = [...state.institutions, {
-                        id: state.cont + 1,
-                        name: '',
-                        departments: []
-                    }];
-                    return {...state, institutions: newInstitute, cont: state.cont + 1};
+                const { result: nodeAddNode  } = search(id, state);
+                for (const key in nodeAddNode) {
+                    switch (key) {
+                        case 'institutions':
+                            nodeAddNode[key].push({
+                                id: state.cont + 1,
+                                name: '',
+                                departments: []
+                            });
+                            return {...state};
+                        case 'departments':
+                            nodeAddNode[key].push({
+                                id: state.cont + 1,
+                                name: '',
+                                others: []
+                            });
+                            return {...state};
+                        case 'others':
+                            nodeAddNode[key].push({
+                                id: state.cont + 1,
+                                name: '',
+                                services: []
+                            });
+                            return {...state};
+                        case 'services':
+                            nodeAddNode[key].push({
+                                id: state.cont + 1,
+                                name: '',
+                                items: []
+                            });
+                            return {...state};
+                        case 'items':
+                            nodeAddNode[key].push({
+                                id: state.cont + 1,
+                                name: '',
+                                description: ''
+                            });
+                            return {...state};
+                        default:
+                            break;
+                    }
                 }
                 return state;
             case 'REMOVE_NODE':
@@ -36,6 +70,7 @@ const App = () => {
                 return state;
         }
     }
+    
     const [state, dispatch] = useReducer(reducer, initialValue);
 
     return (

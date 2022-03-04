@@ -2,7 +2,7 @@
     display: inline-flex;
     align-items: center;
     margin-right: 10px;
-    min-width: 162px;
+    /*min-width: 162px;*/
 }
 
 .text > h5 {

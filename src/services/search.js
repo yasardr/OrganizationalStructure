@@ -1,12 +1,18 @@
-export let tracing = [];
-export let result = null;
+let tracing = [];
+let result = null;
 
 export const search = (id, data) => {
+    tracing = [];
+    search2(id, data);
+    return {tracing, result};
+}
+
+const search2 = (id, data) => {
     //Organization
     for (const key in data) {
         if (key === 'id' && data[key] === id) {
             result = data;
-            return data;
+            break;
         } 
     }
     //Institutions
@@ -25,7 +31,7 @@ export const search = (id, data) => {
                 if (key === 'id' && d[key] === id) {
                     tracing.push('institutions');
                     tracing.push(indexI);
-                    tracing.push('departaments');
+                    tracing.push('departments');
                     tracing.push(indexD);
                     result = d;
                     break;
@@ -37,7 +43,7 @@ export const search = (id, data) => {
                     if (key === 'id' && o[key] === id) {
                         tracing.push('institutions');
                         tracing.push(indexI);
-                        tracing.push('departaments');
+                        tracing.push('departments');
                         tracing.push(indexD);
                         tracing.push('others');
                         tracing.push(indexO);
@@ -51,7 +57,7 @@ export const search = (id, data) => {
                         if (key === 'id' && s[key] === id) {
                             tracing.push('institutions');
                             tracing.push(indexI);
-                            tracing.push('departaments');
+                            tracing.push('departments');
                             tracing.push(indexD);
                             tracing.push('others');
                             tracing.push(indexO);
@@ -67,7 +73,7 @@ export const search = (id, data) => {
                             if (key === 'id' && item[key] === id) {
                                 tracing.push('institutions');
                                 tracing.push(indexI);
-                                tracing.push('departaments');
+                                tracing.push('departments');
                                 tracing.push(indexD);
                                 tracing.push('others');
                                 tracing.push(indexO);
