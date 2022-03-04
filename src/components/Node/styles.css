@@ -9,6 +9,8 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    width: 200px;
+    height: 20px;
 }
 
 .node-container:hover {
@@ -16,6 +18,18 @@
 }
 
 .node-container > span {
-    margin: 0 3rem 0 0;
     font-weight: bold;
+    width: 120px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: start;
+}
+
+.secondary {
+    border: 2px solid #0063AE;
+}
+
+.secondary:hover {
+    border: 3px solid #0063AE;
 }

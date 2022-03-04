@@ -3,14 +3,25 @@ import PropTypes from 'prop-types';
 import './styles.css';
 import BreadcrumbItem from '../BreadcrumbItem';
 
-const Breadcrumb = (props) => {
+
+const Breadcrumb = ({ nodeId, isHide, data }) => {
+  let title = 'Organización';
+  let content = 'Angeles S.A de C.V';
+  // console.log(nodeId);
+  // console.log(data);
+
   return (
     <div className='breadcrumb'>
-        <BreadcrumbItem title='Organización' content='Angeles S.A de C.V' />
+      { 
+        !isHide && <BreadcrumbItem title={title} content={content} />
+      }
     </div>
   )
 }
 
-Breadcrumb.propTypes = {}
+Breadcrumb.propTypes = {
+  nodeId: PropTypes.number.isRequired,
+  isHide: PropTypes.bool.isRequired
+}
 
 export default Breadcrumb;

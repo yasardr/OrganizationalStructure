@@ -1,0 +1,12 @@
+.container-list {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    border: 1px solid #F4F4F4;
+    box-shadow: 2px 2px 3px #F4F4F4;
+    margin-left: 10rem;
+}
